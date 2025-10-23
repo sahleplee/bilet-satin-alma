@@ -20,7 +20,7 @@ Bu proje, Docker kullanılarak kolayca çalıştırılabilir. Bilgisayarınızda
 1.  **Projeyi Klonlayın veya İndirin:**
     Bu GitHub deposunu bilgisayarınıza klonlayın veya ZIP olarak indirin.
     ```bash
-    git clone [https://github.com/sahleplee/bilet-satin-alma.git](https://github.com/sahleplee/bilet-satin-alma.git)
+    git clone https://github.com/sahleplee/bilet-satin-alma.git
     cd bilet-satin-alma 
     ```
 
