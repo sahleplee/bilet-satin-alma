@@ -1,0 +1,276 @@
+/* style.css */
+
+/* ========================================= */
+/* 1. Renk Paleti ve Temel Ayarlar           */
+/* ========================================= */
+:root {
+    --color-turquoise: #40E0D0; /* Ana Turkuaz */
+    --color-turquoise-dark: #36c7b8; /* Turkuaz Koyu (Hover için) */
+    --color-red: #DC143C;      /* Vurgu Kırmızısı */
+    --color-red-dark: #c41235; /* Kırmızı Koyu (Hover için) */
+    --color-white: #FFFFFF;    /* Beyaz */
+    --color-dark-text: #212529; /* Koyu Metin (Bootstrap .text-dark) */
+    --color-muted-text: #6c757d; /* Soluk Metin (Bootstrap .text-muted) */
+    --color-light-bg: #f8f9fa;  /* Açık Arka Plan */
+    --border-radius-base: 0.75rem; /* Daha yuvarlak köşeler */
+    --box-shadow-base: 0 4px 12px rgba(0,0,0,0.08); /* Yumuşak gölge */
+    --transition-base: all 0.3s ease; /* Varsayılan geçiş efekti */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: var(--color-light-bg);
+    color: var(--color-dark-text);
+    /* Türk Motifi Arka Plan (Yer Tutucu - İsteğe Bağlı) */
+    /* background-image: url('images/motif-pattern.png'); */
+    /* background-repeat: repeat; background-size: subtle; */
+}
+
+/* ========================================= */
+/* 2. Navbar (Header) Stilleri             */
+/* ========================================= */
+.navbar.bg-custom-header {
+    background-color: var(--color-white); 
+    border-bottom: 3px solid var(--color-turquoise); 
+    box-shadow: var(--box-shadow-base);
+}
+.navbar.bg-custom-header .navbar-brand img {
+    height: 60px; /* Logo Yüksekliği */
+}
+.navbar.bg-custom-header .nav-link {
+    color: var(--color-dark-text) !important; 
+    font-weight: 500;
+    transition: var(--transition-base);
+    padding: 0.5rem 1rem; /* Linklere daha fazla alan */
+    border-radius: var(--border-radius-base); /* Hover arka planı için */
+}
+.navbar.bg-custom-header .nav-link:hover,
+.navbar.bg-custom-header .nav-link.active {
+    color: var(--color-turquoise) !important;
+    background-color: rgba(64, 224, 208, 0.1); /* Çok soluk turkuaz arka plan */
+}
+/* Sağdaki kullanıcı menüsü */
+.navbar.bg-custom-header .navbar-nav .nav-link.dropdown-toggle {
+     color: var(--color-muted-text) !important;
+}
+.navbar.bg-custom-header .navbar-nav .nav-link.dropdown-toggle:hover {
+     color: var(--color-dark-text) !important;
+     background-color: transparent; /* Dropdown hover arka planı olmasın */
+}
+
+/* ========================================= */
+/* 3. Ana İçerik Kartı Stili               */
+/* ========================================= */
+.main-content-card {
+    background-color: var(--color-white);
+    padding: 2rem 2.5rem; /* Daha fazla iç boşluk */
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-base);
+}
+
+/* ========================================= */
+/* 4. Buton Stilleri ve Animasyonları        */
+/* ========================================= */
+.btn {
+    transition: var(--transition-base);
+    border-radius: var(--border-radius-base); /* Yuvarlak köşeler */
+    padding: 0.75rem 1.5rem; /* Daha dolgun butonlar */
+    font-weight: 500;
+}
+.btn-primary {
+    background-color: var(--color-turquoise);
+    border-color: var(--color-turquoise);
+    color: var(--color-dark-text); /* Koyu metin daha iyi okunabilir */
+}
+.btn-primary:hover {
+    background-color: var(--color-turquoise-dark); 
+    border-color: var(--color-turquoise-dark);
+    transform: translateY(-3px); /* Daha belirgin kalkma */
+    box-shadow: 0 6px 12px rgba(64, 224, 208, 0.3); /* Turkuaz gölge */
+    color: var(--color-dark-text);
+}
+.btn-danger {
+    background-color: var(--color-red);
+    border-color: var(--color-red);
+}
+.btn-danger:hover {
+    background-color: var(--color-red-dark); 
+    border-color: var(--color-red-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(220, 20, 60, 0.3); /* Kırmızı gölge */
+}
+.btn-success { /* Yeşil butonları Turkuaz yap */
+    background-color: var(--color-turquoise);
+    border-color: var(--color-turquoise);
+    color: var(--color-dark-text);
+}
+.btn-success:hover {
+    background-color: var(--color-turquoise-dark);
+    border-color: var(--color-turquoise-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(64, 224, 208, 0.3); 
+    color: var(--color-dark-text);
+}
+/* Outline Butonlar */
+.btn-outline-primary {
+    color: var(--color-turquoise);
+    border-color: var(--color-turquoise);
+}
+.btn-outline-primary:hover {
+    background-color: var(--color-turquoise);
+    color: var(--color-dark-text);
+}
+.btn-outline-danger {
+    color: var(--color-red);
+    border-color: var(--color-red);
+}
+.btn-outline-danger:hover {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+/* Buton Tıklama Efekti */
+.btn:active {
+    transform: scale(0.96) translateY(0px); /* Daha belirgin küçülme */
+    box-shadow: none; 
+}
+
+/* ========================================= */
+/* 5. Form Elemanları                      */
+/* ========================================= */
+.form-control, .form-select {
+    border-radius: var(--border-radius-base);
+    padding: 0.75rem 1rem; /* Daha rahat input alanları */
+    transition: var(--transition-base);
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-red); 
+    box-shadow: 0 0 0 0.25rem rgba(220, 20, 60, 0.25); 
+}
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================= */
+/* 6. Kartlar ve Hover Efekti              */
+/* ========================================= */
+.card {
+    border: none; /* Kenarlıkları kaldırıp gölgeye odaklan */
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-base);
+}
+/* Sefer Listesi Kartları */
+.list-group-item.card-hover {
+     transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); 
+     border-radius: var(--border-radius-base) !important; /* !important gerekebilir */
+}
+.list-group-item.card-hover:hover {
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    z-index: 10; /* Üstte kalması için */
+    position: relative; /* z-index için */
+}
+
+/* ========================================= */
+/* 7. Animasyonlar                         */
+/* ========================================= */
+/* Giriş Animasyon Tanımları */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInSlow {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Giriş Animasyon Sınıfları (HTML'de kullanılacak) */
+.fade-in {
+    opacity: 0; /* Başlangıçta gizli */
+    animation: fadeIn 0.6s ease-out 0.2s forwards; /* 0.2sn sonra başla */
+}
+.fade-in-slow {
+     opacity: 0; /* Başlangıçta gizli */
+    animation: fadeInSlow 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; /* Daha akıcı */
+}
+
+/* ========================================= */
+/* 8. Türk Motifleri (Yer Tutucular)       */
+/* ========================================= */
+.motif-border { 
+    border: 4px solid var(--color-turquoise);
+    padding: 2rem; 
+    border-radius: var(--border-radius-base); 
+    margin-bottom: 2.5rem; 
+    background-color: rgba(255, 255, 255, 0.8); /* Hafif şeffaf beyaz iç */
+    box-shadow: var(--box-shadow-base);
+    /* Örnek Kenarlık Motifi */
+    /* border-image: url('images/motif-border.svg') 30 stretch; */
+    /* border-image-outset: 5px; */
+}
+
+.motif-background { 
+    background-image: url('images/turkish-motif-pattern.svg'); /* Kendi desen dosyanız */
+    background-repeat: repeat;
+    background-size: 150px 150px; 
+    background-position: center;
+    background-color: var(--color-white); 
+    background-blend-mode: overlay; /* Deseni soluklaştır */
+    opacity: 0.95; /* Hafif şeffaflık */
+}
+
+/* ========================================= */
+/* 9. Hero Section (index.php)             */
+/* ========================================= */
+.hero-section { 
+    position: relative; 
+    height: 50vh; /* Biraz daha yüksek */
+    background-image: url('https://images.unsplash.com/photo-1596201689030-2e11b37eb0c8?q=80&w=1974&auto=format&fit=crop'); 
+    background-size: cover; 
+    background-position: center 70%; 
+    border-radius: var(--border-radius-base); 
+    overflow: hidden; 
+}
+.hero-overlay { 
+    position: absolute; 
+    top: 0; left: 0; right: 0; bottom: 0; 
+    background: linear-gradient(60deg, rgba(64, 224, 208, 0.75), rgba(220, 20, 60, 0.55)); /* Daha canlı gradyan */
+    z-index: 1; 
+}
+.hero-content { 
+    position: relative; 
+    z-index: 2; 
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+}
+.hero-content h1 {
+    font-size: 3.5rem; /* Daha büyük başlık */
+}
+
+/* ========================================= */
+/* 10. Diğer İyileştirmeler                  */
+/* ========================================= */
+/* Tablo Başlıkları */
+.table thead th {
+    background-color: var(--color-light-bg); /* Başlık arka planı */
+    color: var(--color-dark-text);
+    font-weight: 600;
+    border-bottom-width: 2px; /* Alt çizgiyi belirginleştir */
+}
+
+/* Linkler */
+a {
+    color: var(--color-turquoise);
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+a:hover {
+     color: var(--color-turquoise-dark);
+     text-decoration: underline;
+}
+
+/* Scrollbar (Tarayıcı destekliyorsa) */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-light-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-turquoise); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-turquoise-dark); }
