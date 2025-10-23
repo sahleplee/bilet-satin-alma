@@ -20,7 +20,7 @@ Bu proje, Docker kullanılarak kolayca çalıştırılabilir. Bilgisayarınızda
 1.  **Projeyi Klonlayın veya İndirin:**
     Bu GitHub deposunu bilgisayarınıza klonlayın veya ZIP olarak indirin.
     ```bash
-    git clone [https://github.com/sahleplee/bilet-satin-alma.git](https://github.com/sahleplee/bilet-satin-alma.git)
+    git clone https://github.com/sahleplee/bilet-satin-alma.git
     cd bilet-satin-alma 
     ```
 
@@ -70,7 +70,16 @@ Container ilk kez başlatıldığında veritabanı boş olacaktır. Uygulamanın
     * E-posta: `yolcu@mail.com`
     * Şifre: `yolcu123`
     * (Başlangıç Bakiyesi: 5000 TL)
+      
+## Eklenen Test Güzergahları
 
+`seed_data.php` betiği, aşağıdaki güzergahlar için test seferleri oluşturur:
+
+* İstanbul - Ankara 
+* Trabzon - İstanbul
+* Ankara - İzmir
+* Antalya - Bursa
+* Artvin - Trabzon
 ## Güvenlik Notu
 
 Test işlemleriniz bittikten sonra, güvenlik amacıyla `setup_db.php` ve `seed_data.php` dosyalarını sunucudan (veya Docker image'ından) silmeniz önerilir.
