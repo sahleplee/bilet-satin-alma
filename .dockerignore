@@ -1,0 +1,14 @@
+# Git ile ilgili dosyaları dahil etme
+.git
+.gitignore
+
+# Docker ile ilgili dosyaları dahil etme (kendileri hariç)
+Dockerfile
+.dockerignore
+
+# Yerel veritabanı dosyasını dahil etme (Container kendi oluşturacak)
+database.sqlite
+
+# Diğer geliştirme ortamı dosyaları (varsa)
+.vscode/
+*.log
